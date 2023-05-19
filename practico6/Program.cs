@@ -1,69 +1,15 @@
-﻿int opcion;
+﻿
+Console.Write("Ingrese una palabra : ");
 
-do
-{
+string cadena = Console.ReadLine();
 
-    Console.WriteLine("\n\n===== CALCULADORA =====");
+Console.WriteLine("La longitud de la palabra es : " + cadena.Length);
 
-    Console.WriteLine("Ingrese una de las siguiente opciones : \n1-Sumar\n2-Restar\n3-Multiplicar\n4-Dividir\n5-Salir\n");
+Console.Write("Ingrese una segunda palabra : ");
 
-    opcion = int.Parse(Console.ReadLine());
+string cadena_2 = Console.ReadLine();
 
-    if (opcion != 5)
-    {
-        Console.Write("Ingrese el primer numero : ");
+Console.WriteLine("La palabra concatenada es  : " + cadena + cadena_2);
 
-        int number_1 = int.Parse(Console.ReadLine());
-
-        Console.Write("Ingrese el segundo numero : ");
-
-        int number_2 = int.Parse(Console.ReadLine());
-
-        int result;
-
-
-
-
-        switch (opcion)
-        {
-
-            case 1:
-
-                result = number_1 + number_2;
-
-                Console.Write("El resultado es " + result);
-
-                break;
-
-            case 2:
-
-                result = number_1 - number_2;
-
-                Console.Write("El resultado es " + result);
-
-                break;
-
-            case 3:
-
-                result = number_1 * number_2;
-
-                Console.Write("El resultado es " + result);
-
-                break;
-
-            case 4:
-
-                result = number_1 / number_2;
-
-                Console.Write("El resultado es " + result);
-
-                break;
-
-        }
-
-    }
-
-
-} while (opcion != 5);
-
+Console.WriteLine("Una subcadena es " + cadena.Substring(4));
 
