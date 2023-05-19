@@ -1,40 +1,69 @@
-﻿
-bool isInteger;
+﻿int opcion;
 
 do
 {
-    Console.WriteLine("Ingrese un numero entero : ");
 
-    string input = Console.ReadLine();
+    Console.WriteLine("\n\n===== CALCULADORA =====");
 
-    int number;
+    Console.WriteLine("Ingrese una de las siguiente opciones : \n1-Sumar\n2-Restar\n3-Multiplicar\n4-Dividir\n5-Salir\n");
 
-    isInteger = int.TryParse(input, out number); // isInteger is a  bool who confirmed if input is a word or not, if is a number, the value of input is save in the variable number
+    opcion = int.Parse(Console.ReadLine());
 
-    if (isInteger == true)
+    if (opcion != 5)
     {
+        Console.Write("Ingrese el primer numero : ");
 
-        while (number > 9)
+        int number_1 = int.Parse(Console.ReadLine());
+
+        Console.Write("Ingrese el segundo numero : ");
+
+        int number_2 = int.Parse(Console.ReadLine());
+
+        int result;
+
+
+
+
+        switch (opcion)
         {
 
-            Console.Write(number % 10);
+            case 1:
 
-            number = number / 10;
+                result = number_1 + number_2;
 
+                Console.Write("El resultado es " + result);
+
+                break;
+
+            case 2:
+
+                result = number_1 - number_2;
+
+                Console.Write("El resultado es " + result);
+
+                break;
+
+            case 3:
+
+                result = number_1 * number_2;
+
+                Console.Write("El resultado es " + result);
+
+                break;
+
+            case 4:
+
+                result = number_1 / number_2;
+
+                Console.Write("El resultado es " + result);
+
+                break;
 
         }
 
-        Console.Write(number);
-
-    }
-    else
-    {
-
-        Console.WriteLine("No ingreso un numero, intente nuevamente...");
-
     }
 
-} while (isInteger == false);
 
+} while (opcion != 5);
 
 
